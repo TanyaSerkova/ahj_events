@@ -1,0 +1,32 @@
+body {
+    color: #e0e0e0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(4, 115, 78);
+}
+
+#field {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(4, 120px);
+     gap: 5px;
+    width: fit-content;
+     margin: 20px auto;
+}
+
+.cell {
+    border: 1px solid green;
+    background-color: aquamarine;
+}
+
+.goblin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+}
