@@ -9,6 +9,23 @@ h1 {
     color: rgb(4, 115, 78);
 }
 
+.text-wrapper {
+    display: block;
+  box-shadow: 0 2px 4px rgba(7, 186, 141, 0.5);
+  width: 250px;
+  height: 150px;
+  padding: 5px 0px;
+  margin: 20px auto;
+  border-radius: 20px;
+  background-color:rgb(229, 247, 241)
+}
+
+.text {
+    color: rgb(46, 78, 78);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
 #field {
     display: grid;
     grid-template-columns: repeat(4, 120px);
@@ -19,14 +36,21 @@ h1 {
 }
 
 .cell {
-    border: 1px solid green;
+    border: 5px solid green;
     background-color: aquamarine;
+    width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 20px;
+  cursor: url("../img/hammer-cursor.png"), auto;
 }
 
 .goblin {
     position: absolute;
+    background-size: cover;
+    width: 90%;
+    height: 90%;
     top: 50%;
     left: 50%;
-    width: 50px;
-    height: 50px;
+    transform: translate(-50%, -50%);
 }
