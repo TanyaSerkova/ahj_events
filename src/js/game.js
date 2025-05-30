@@ -36,14 +36,11 @@ export default class Game {
     if (this.misses >= this.maxMisses) {
       alert("Игра окончена!");
       clearInterval(this.intervalId);
-
       this.hits = 0;
       this.misses = 0;
-
       document.querySelector(".score_hit").textContent = this.hits;
       document.querySelector(".score_miss").textContent = this.misses;
-      
-    window.location.reload();
+      window.location.reload();
     }
   }
 
@@ -54,34 +51,31 @@ export default class Game {
     } else {
       this.misses++;
       document.querySelector(".score_miss").textContent = this.misses;
-
       this.clearGame();
     }
   }
 
   startGame() {
     const goblin = document.createElement("img");
-    goblin.setAttribute = ("alt", "");
     goblin.src = this.goblinImgSrc;
     goblin.classList.add("goblin");
+    goblin.alt = '';
     let previousCellIndex = Math.floor(Math.random() * this.cells.length);
     let currentCell = this.cells[previousCellIndex];
     currentCell.append(goblin);
 
     this.intervalId = setInterval(() => {
       goblin.classList.add("hidden");
-
       let randomCellIndex;
+
       do {
         randomCellIndex = Math.floor(Math.random() * this.cells.length);
       } while (randomCellIndex === previousCellIndex);
 
       previousCellIndex = randomCellIndex;
       currentCell = this.cells[randomCellIndex];
-
       currentCell.append(goblin);
       goblin.classList.remove("hidden");
-
       goblin.addEventListener("click", () => {
         goblin.classList.add("clicked");
       });
